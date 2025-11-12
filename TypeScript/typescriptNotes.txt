@@ -1,0 +1,32 @@
+JavaScript - Dynamically types language
+let age = 30
+let name = 'John'
+age = 'thirty'
+
+Typescript - Statically typed language
+let age = 30 OR let age:number = 30
+let name = 'John' OR let name:string = 'john'
+age = 'thirty' #NOT ALLOWED
+
+Why Typescript ?
+- JavaScript (ES3, ES4, ES5, ES6)
+- ECMAScript - ES is the standard to which all JavaScript code must comply.
+
+TypeScript - Superset of JavaScript.
+- A vendor can't add features to the JavaScript language without breaking ECMAScript compliance.
+- In contrast,  with TypeScript, Microsoft can add any new feature it wants, so long as the generated JavaScript is ECMAScript-complaint.
+- That Give Microsoft all the freedom in the world to make typescript as feature-full as any other programming language.
+
+Setup -
+- First install node.js
+- install typescript (npm install -g typescript)
+- Install VScode
+
+Running TypeScript file-
+- save file with .ts extension
+- compile the file with "tsc .\TypeScript\script1.ts(file_path)". It will create the one .js file
+- run program by using 'node .\TypeScript\Day1\script1.js(js file_path)'.
+
+Another way to run TypeScript file (BETTER WAY):
+- install tsx package (npm install -g tsx)
+- run file with 'tsc .\TypeScript\script1.ts(file_path)'

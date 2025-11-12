@@ -1,0 +1,22 @@
+What is playwright ?
+- playwright is an open source by Microsoft for automating web browser testing.
+- playwright is a framework for automating web browsers, enabling end to end testing.
+- beyond browser automation, playwright offers a dedicated API for testing and interacting with web APIs.
+- Playwright is an open source Node.js library.
+
+Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code of a web browser.
+
+Features:
+- Cross browsing : Works with Chromium(Chrome, edge), Firefox, WebKit(Safari).
+- Cross Platform : Runs on windows, Mac and Linux.
+- Cross-language : You can write tests in JS, TS, Java, Python or c#.
+- Test Mobile web : support mobile testing for chrome(Android) and safari(iOS)
+- API Testing : Playwright includes built-in API testing, allowing you to test backend APIs together.
+- Automatic waiting(auto-wait) : Playwright waits for elements to be ready before performing actions, reducing test  flakiness.
+- Handle complex Elements : Easily interacts with Shadow DOM elements, which are tricky for other tools.
+- Parallel execution : supports running tests simultaneously in multiple browser instances for faster execution.
+- Built-in Reporters : Provides various report formats like HTML, JSON, JUnit and more. Supports third-party reporting tools like Allure.
+- Inspector : Helps debug tests by showing click points and verifying locations in real time.
+- Code Generation(code gen) : the codegen tool records your actions and converts them into test scripts in any supported language.
+- Tracing(Trace Viewer) : Captures screenshots, records videos, retries flasky tests, and logs steps automatically. Capture all the information to investigate the test failure.
+
