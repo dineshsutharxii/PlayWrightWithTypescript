@@ -13,7 +13,7 @@ class car {
     constructor(name:string, color:string, model:string){
         this.name=name
         this.color=color
-        this.name=model
+        this.model=model
     }
     start(){
         console.log("Car started......")
@@ -27,14 +27,25 @@ class car {
 }
 
 class Honda extends car {
-    years:number
-    constructor(year:number){
-        this.years=year
+    year:number
+    constructor(name:string, color:string, model:string, year:number){
+        super(name, color, model)
+        this.year=year
     }
+    //method overriding
     start(){
         console.log("Honda started......")
     }
+
     yom(){
-        console.log(`Year of Manufacture : ${this.yom}`)
+        console.log(`Name: ${this.name}, Color: ${this.color}, Model: ${this.model}, YOM:${this.year}`)
     }
 }
+
+let honda = new Honda("Honda", "red", "Honda City", 2024)
+console.log("Name : ", honda.name)
+console.log("Color :", honda.color)
+console.log("Model :", honda.model)
+console.log("Years :", honda.year)
+honda.start()
+honda.yom()
