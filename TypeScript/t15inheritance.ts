@@ -6,7 +6,7 @@
 //A ----- properties + method (parent class/ Base class/ super class)
 //B extends A ---- properties+method (Child class/ derived class/Sub class)
 
-class car {
+class Car {
     name:string
     color:string
     model:string
@@ -26,7 +26,7 @@ class car {
     }
 }
 
-class Honda extends car {
+class Honda extends Car {
     year:number
     constructor(name:string, color:string, model:string, year:number){
         super(name, color, model)
@@ -49,3 +49,10 @@ console.log("Model :", honda.model)
 console.log("Years :", honda.year)
 honda.start()
 honda.yom()
+
+
+//Parent class variable is holding child class object
+let car:Car = new Honda("Honda", "Red", "Honda City", 2024)
+car.displayInformation()
+car.start()
+//car.yom() //not accessible
