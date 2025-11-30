@@ -3,6 +3,7 @@ What is playwright ?
 - playwright is a framework for automating web browsers, enabling end to end testing.
 - beyond browser automation, playwright offers a dedicated API for testing and interacting with web APIs.
 - Playwright is an open source Node.js library.
+- Playwright uses websocket while Selenium uses w3c protocols 
 
 Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code of a web browser.
 
@@ -20,3 +21,24 @@ Features:
 - Code Generation(code gen) : the codegen tool records your actions and converts them into test scripts in any supported language.
 - Tracing(Trace Viewer) : Captures screenshots, records videos, retries flasky tests, and logs steps automatically. Capture all the information to investigate the test failure.
 
+Installing Playwright
+- npm init playwright@latest
+- npx playwright --version (Checking playwright version)
+- npx playwright test (Running all tests in all browsers)
+- npx playwright test .\tests\mytest.spec.ts or mytest.spec.ts (Running tests in one file)
+- npx playwright test -g "title" (runs all the testcases having 'title' in test title)
+- npx playwright test --ui (Open playwright ui from where you can run your test)
+- npx playwright --debug (to debug all the cases)
+- npx playwright test mytest.spec.ts --debug (to debug the cases in particular file)
+- npx playwright test --last-failed (run the all cases which were failed in last run)
+- npx playwright test --project=chromium (to all cases in chromium browser)
+
+Locators
+recommended built-in locators.
+page.getByRole() to locate by explicit and implicit accessibility attributes.
+page.getByText() to locate by text content.
+page.getByLabel() to locate a form control by associated label's text.
+page.getByPlaceholder() to locate an input by placeholder.
+page.getByAltText() to locate an element, usually image, by its text alternative.
+page.getByTitle() to locate an element by its title attribute.
+page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
