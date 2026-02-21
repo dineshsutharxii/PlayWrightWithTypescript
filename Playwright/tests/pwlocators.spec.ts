@@ -35,3 +35,33 @@ test("Verify playwright locator getByRole()",async ({page}) => {
     await page.getByRole("link", {name:'Register'}).click()
     await expect(page.getByRole('heading', {name:'Register'})).toBeVisible();
 })
+
+//page.getByLabel() to locate a form control by associated label's text.
+test("Verify playwright locator getByLabel()",async ({page}) => {
+    await page.goto("https://demo.nopcommerce.com/register")
+    await page.getByLabel('First name:').fill("John")
+    await page.getByLabel('Last name:').fill("Kenedy")
+    await page.getByLabel('Email:').fill("John@gmail.co,m")
+
+})
+
+//page.getByPlaceholder() to locate an input by placeholder.
+test("Verify playwright locator getByPlaceholder()",async ({page}) => {
+    await page.goto("https://demo.nopcommerce.com/register")
+    await page.getByPlaceholder('Search store').fill('Apple Macbook')
+})
+
+//For this loactor you have to have element with 'title' attribute.
+//page.getByTitle() to locate an element by its title attribute.
+// test("Verify playwright locator getByTitle()",async ({page}) => {
+//     await page.goto("your link")
+//     await expect(page.getByTitle('Home page link')).toHaveText('Home')
+//     await expect(page.getByTitle('HyperText Markup Language')).toHaveText('HTML');
+// })
+
+//page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+// test("Verify playwright locator getByTestId()",async ({page}) => {
+//     await page.goto("your link")
+//     await expect(page.getByTestId('Home page link')).toHaveText('Home')
+//     await expect(page.getByTestId('HyperText')).toHaveText('HTML');
+// })
