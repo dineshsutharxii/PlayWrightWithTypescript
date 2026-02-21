@@ -12,8 +12,26 @@ page.getByTestId() to locate an element based on its data-testid attribute (othe
 
 import {test, expect, Locator} from "@playwright/test";
 
-test("Verify playwright locators",async ({page}) => {
+//page.getByAltText() to locate an element, usually image, by its text alternative.
+test("Verify playwright locator getByAltText()",async ({page}) => {
     await page.goto("https://demo.nopcommerce.com/")
-    const logo = page.getByAltText("nopCommerce demo store")
+    const logo:Locator = page.getByAltText("nopCommerce demo store")
     await expect(logo).toBeVisible();
+})
+
+//page.getByText() to locate by text content.
+test("Verify playwright locator getByText()",async ({page}) => {
+    await page.goto("https://demo.nopcommerce.com/")
+    await expect(page.getByText("Welcome to our store")).toBeVisible() //full string
+    await expect(page.getByText("Welcome to")).toBeVisible() //substring string
+    await expect(page.getByText(/Welcome\s+to\s+Our\s+store/i)).toBeVisible() //regular expression
+
+})
+
+//page.getByRole() to locate by explicit and implicit accessibility attributes.
+//syntax - page.getByRole('role', {name:'text'})
+test("Verify playwright locator getByRole()",async ({page}) => {
+    await page.goto("https://demo.nopcommerce.com/")
+    await page.getByRole("link", {name:'Register'}).click()
+    await expect(page.getByRole('heading', {name:'Register'})).toBeVisible();
 })
