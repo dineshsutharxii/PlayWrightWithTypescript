@@ -16,14 +16,25 @@ import {RegistrationPage} from '../pages/RegistrationPage'
 import {RandomDataUtil} from '../utils/randomDataGenerator'
 import {TestConfig} from '../test.config'
 
+let homePage: HomePage;
+let registrationPage: RegistrationPage;
+let config: TestConfig;;
+
+test.beforeEach(async ({page}) => {
+    config = new TestConfig();
+    await page.goto(config.appUrl)
+    homePage = new HomePage(page);
+    registrationPage = new RegistrationPage(page);
+})
+
+test.afterEach(async ({page}) => {
+    await page.waitForTimeout(3000);
+    await page.close();
+})
+
 test("User Registration test", async ({page}) => {
-    const config = new TestConfig();
-    const homePage = new HomePage(page);
-    const registrationPage = new RegistrationPage(page);
 
     //navigate to application URL
-    await page.goto(config.appUrl)
-
     //Go to 'My Account' and click 'Register'
     await homePage.clickMyAccount();
     await homePage.clickRegister();
@@ -42,9 +53,8 @@ test("User Registration test", async ({page}) => {
     await page.waitForTimeout(5000);
 
     //Validate the confirmation message
-    const confirmationMsg = registrationPage.getConfirmationMsg();
+    const confirmationMsg = await registrationPage.getConfirmationMsg();
     console.log(confirmationMsg);
     expect(confirmationMsg).toContain('Your Account Has Been Created!');
-    await page.waitForTimeout(3000);
 
 })
