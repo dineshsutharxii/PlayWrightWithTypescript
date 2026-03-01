@@ -32,7 +32,7 @@ test.afterEach(async ({page}) => {
     await page.close();
 })
 
-test("User Registration test", async ({page}) => {
+test("User Registration test @sanity", async ({page}) => {
 
     //navigate to application URL
     //Go to 'My Account' and click 'Register'
